@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+}
+
+#canvas-container {
+    flex: 1;
+    position: relative;
+}
+
+#controls-panel {
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-left: 1px solid #333;
+    overflow-y: auto;
+}
+
+.speed-controls {
+    margin-top: 20px;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    height: 5px;
+    background: #333;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.global-controls {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Dark/Light theme styles */
+body.light-theme {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+body.light-theme #controls-panel {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-left: 1px solid #ddd;
+}
+
+body.light-theme .control-group label {
+    color: #000;
+}
+
+body.light-theme .control-group input[type="range"] {
+    background: #ddd;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+
+    #controls-panel {
+        width: 100%;
+        height: 300px;
+        border-left: none;
+        border-top: 1px solid #333;
+    }
+
+    #canvas-container {
+        height: calc(100vh - 300px);
+    }
+}
